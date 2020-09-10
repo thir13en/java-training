@@ -11,3 +11,6 @@
 ![ide4](img/ide4.png)  
 5. Uncheck these boxes from Code Folding General Editor Settings  
 ![ide5](img/ide5.png)  
+
+### Type shortcuts
+* `sout` -> `System.out.println`

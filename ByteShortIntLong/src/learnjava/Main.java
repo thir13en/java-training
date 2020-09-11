@@ -36,5 +36,7 @@ public class Main {
         System.out.println("int max long value: " + maxLong);                // 9223372036854775807
         System.out.println("overflow max long value: " + (maxLong + 1));     // -9223372036854775808
         System.out.println("overflow min long value: " + (minLong - 1));     // 9223372036854775807
+
+        long aLongNumber = 100L;        // The final L tells the compiler this is a LONG value
     }
 }

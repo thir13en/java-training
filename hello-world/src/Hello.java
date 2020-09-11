@@ -1,8 +1,8 @@
 public class Hello {
-    private String name = "Bro";
 
     public static void main(String[] args) {
-        System.out.println("Hello,  ".concat(this.name));
+        String name = "Bro";
+        System.out.println("Hello,  ".concat(name));
     }
 
 }

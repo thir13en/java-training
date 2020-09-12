@@ -8,7 +8,8 @@
 1. short --> 16 bits
 1. int --> 32 bits
 1. long --> 64 bits
-1. float
+1. float --> Single precision decimal number -> 32bits
+1. double --> double precision decimal number -> 64bits / 8 bytes
 
 ### Wrapper classes
 Java uses the concept of `wrapper class` for the primitive values, for example in the case of `int`, we got the wrapper class `Integer`.
@@ -22,3 +23,7 @@ Will throw a compile time error due to a `byte` divided by an `integer` being co
 ```java
 byte byteValue = (byte)(Byte.MIN_VALUE / 2);
 ```
+
+### Foating Point Number
+They are fractionary numbers with decimal parts, there are two primitive types to deal with them. `float` and `double`.  
+The `double` precision number or `Double` wrapper class is the one recommended, it has more capacity, precision and it has more optimizations and runtime speed due to the architecture of modern CPUs (64bits). By default, Java uses `double` precision numbers by default when it deals with decimals.

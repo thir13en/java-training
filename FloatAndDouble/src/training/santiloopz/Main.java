@@ -16,7 +16,7 @@ public class Main {
         System.out.println("Max double value: " + maxDoubleValue);
 
         int intValue = 13;
-        float floatValue = 13;         // notice the ending d (not mandatory)
+        float floatValue = 13;
         double doubleValue = 13d;       // notice the ending d (not mandatory)
         double alsoDoubleValue = 13.00;
 

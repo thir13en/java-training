@@ -4,7 +4,7 @@
 ### Primitive data types
 1. boolean
 1. byte --> 8 bits
-1. char
+1. char --> was much more useful when Java was release, since they are very optimal with memory, now not so important. It occupies 2 bytes of memory (It allows you to store Unicode characters).
 1. short --> 16 bits
 1. int --> 32 bits
 1. long --> 64 bits

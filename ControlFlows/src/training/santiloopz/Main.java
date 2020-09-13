@@ -18,5 +18,11 @@ public class Main {
             System.out.println("tranquilo brother");
         }
 
+	    // increase / decrease int
+        int value = 13;
+        value++;
+        System.out.println(value); // 14
+        value--;
+        System.out.println(value); // 13
     }
 }

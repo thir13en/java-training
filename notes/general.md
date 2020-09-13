@@ -24,3 +24,5 @@ As in `JavaScript`, some shorthands can be used:
 int number = 13;
 number *= 2;	// 26
 ```
+
+If you want to know more about the Java keywords, you can reach them [here](https://en.wikipedia.org/wiki/List_of_Java_keywords).  

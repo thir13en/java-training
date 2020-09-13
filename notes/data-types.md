@@ -5,11 +5,14 @@
 1. boolean
 1. byte --> 8 bits
 1. char --> was much more useful when Java was release, since they are very optimal with memory, now not so important. It occupies 2 bytes of memory (It allows you to store Unicode characters).
-1. short --> 16 bits
+1. short --> 16 bits, rarely used
 1. int --> 32 bits
 1. long --> 64 bits
-1. float --> Single precision decimal number -> 32bits
+1. float --> Single precision decimal number -> 32bits, rarely used
 1. double --> double precision decimal number -> 64bits / 8 bytes
+
+### String
+This is NOT a primitive data type, it's actually a class, but has some special features in Java that makes it easier to use. String in Java are `Immutable`, which means when you try to modify a `String`, what happens under the hood is that a new `String` is created. The most optimal way to modify of make additions to a `String` value is using the class `StringBuffer`.
 
 ### Wrapper classes
 Java uses the concept of `wrapper class` for the primitive values, for example in the case of `int`, we got the wrapper class `Integer`.

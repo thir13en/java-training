@@ -9,6 +9,12 @@ Java programs by default look for the `main` method as an entrypoint to start th
 * * -> multiplication
 * / -> division
 * % -> mod
+* && -> and
+* || -> or
+* & -> bitwise and
+* |-> bitwise or
+* > -> gt
+* < -> st
 
 As in `JavaScript`, some shorthands can be used:
 ```java

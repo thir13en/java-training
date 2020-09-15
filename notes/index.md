@@ -1,5 +1,6 @@
 # Index
 
+1. [Class](class.md)
 1. [Closures](closures.md)
 1. [Data Types](data-types.md)
 1. [General](general.md)

@@ -18,8 +18,11 @@ public class Main {
             System.out.println("tranquilo brother");
         }
 
-	    // increase / decrease int
-        int value = 13;
+	    myFirstMethod(13);
+    }
+
+    public static void myFirstMethod(int value) {
+        // increase / decrease int
         value++;
         System.out.println(value); // 14
         value--;

@@ -1,4 +1,4 @@
-# Install Linux
+# JDK in Linux
 
 
 1. Install `Amazon Corretto`, there are Debian and Red Hat packages.

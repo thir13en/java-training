@@ -14,3 +14,6 @@
 
 ### Type shortcuts
 * `sout` -> `System.out.println`
+
+### Set up Java Compiler version
+Go to `File -> Settings -> Build, execution, deployment -> Compiler -> Choose your compiler version`.

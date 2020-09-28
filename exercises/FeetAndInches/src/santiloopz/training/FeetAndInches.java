@@ -6,8 +6,8 @@ public class FeetAndInches {
             System.out.println("Invalid feet or inches argument");
             return -1;
         }
-        double centimeters = calcFeetAndInchesToCentimeters(feet * 12);
-        centimeters += calcFeetAndInchesToCentimeters(inches);
+        double centimeters = feet * 12 * 2.54;
+        centimeters += inches * 2.54;
 
         return centimeters;
     }
@@ -17,6 +17,9 @@ public class FeetAndInches {
             System.out.println("Invalid inches argument");
             return -1;
         }
+        int feet = (int) inches / 12;
+        int remainingInches = (int) inches % 12;
+        System.out.println(feet + " feet and " + remainingInches + " inches");
         return inches * 2.54;
     }
 }

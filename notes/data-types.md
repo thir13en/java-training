@@ -26,6 +26,10 @@ Will throw a compile time error due to a `byte` divided by an `integer` being co
 ```java
 byte byteValue = (byte)(Byte.MIN_VALUE / 2);
 ```
+If you are unsure weather a variable is going to hold a certain type of value or **can also be null**, then it might be a good idea to cast it with a `Wrapper Class` instead of a `primitive data type`:
+```java
+double something = (Double) unsureIfSetVar;
+```
 
 ### Foating Point Number
 They are fractionary numbers with decimal parts, there are two primitive types to deal with them. `float` and `double`.  

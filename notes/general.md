@@ -26,3 +26,13 @@ number *= 2;	// 26
 ```
 
 If you want to know more about the Java keywords, you can reach them [here](https://en.wikipedia.org/wiki/List_of_Java_keywords).  
+
+### Control statements
+In a `switch` control statement, you can pile up several cases in one line:
+```java
+switch (myThingy) {
+	case 1: case 2: case 3:
+		// handler for these cases
+		break;
+}
+```

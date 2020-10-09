@@ -15,3 +15,7 @@
 1. Export it's path by running `$ export PATH=$PWD/jdk-11.0.8+10/bin:$PATH` in the folder root.
 1. Check it is being used by running `$ javac -version` and `$ java -version`
 Side note: there are also `.deb` and `.rpm` packages available.
+
+### AdoptOpenJDK rpm onstaller
+1. Create a file named `/etc/yum.repos.d/adoptopenjdk.repo`
+1. Fill it with 

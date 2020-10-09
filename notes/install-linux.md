@@ -16,7 +16,7 @@
 1. Check it is being used by running `$ javac -version` and `$ java -version`
 Side note: there are also `.deb` and `.rpm` packages available.
 
-### AdoptOpenJDK fedora rpm onstaller
+### AdoptOpenJDK fedora `rpm` installer
 1. Create a file named `/etc/yum.repos.d/adoptopenjdk.repo`
 1. Fill it with 
 ```

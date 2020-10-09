@@ -16,6 +16,15 @@
 1. Check it is being used by running `$ javac -version` and `$ java -version`
 Side note: there are also `.deb` and `.rpm` packages available.
 
-### AdoptOpenJDK rpm onstaller
+### AdoptOpenJDK fedora rpm onstaller
 1. Create a file named `/etc/yum.repos.d/adoptopenjdk.repo`
 1. Fill it with 
+```
+name=AdoptOpenJDK $releasever - $basearch
+baseurl=https://adoptopenjdk.jfrog.io/adoptopenjdk/rpm/fedora/$releasever/$basearch
+enabled=1
+gpgcheck=1
+gpgkey=https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public
+```
+3. Run `sudo dnf check-update`
+1. Install with `sudo yum install adoptopenjdk-11-openj9`

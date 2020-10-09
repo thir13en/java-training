@@ -12,5 +12,4 @@
 1. [Math](math.md)
 1. [Modifiers](modifiers.md)
 1. [Relevant Folks](relevant-folks.md)
-
-6:30
+1. [Tools](tools.md)

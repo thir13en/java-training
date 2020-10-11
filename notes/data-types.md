@@ -12,7 +12,13 @@
 1. double --> double precision decimal number -> 64bits / 8 bytes
 
 ### String
-This is NOT a primitive data type, it's actually a class, but has some special features in Java that makes it easier to use. String in Java are `Immutable`, which means when you try to modify a `String`, what happens under the hood is that a new `String` is created. The most optimal way to modify of make additions to a `String` value is using the class `StringBuffer`.
+This is NOT a primitive data type, it's actually a class, but has some special features in Java that makes it easier to use. String in Java are `Immutable`, which means when you try to modify a `String`, what happens under the hood is that a new `String` is created. The most optimal way to modify of make additions to a `String` value is using the class `StringBuffer`.  
+
+#### Round a decimal in the output
+You can do so with:
+```Java
+String.format("%.2f", 700.0000000000001); // 700.00
+```
 
 ### Wrapper classes
 Java uses the concept of `wrapper class` for the primitive values, for example in the case of `int`, we got the wrapper class `Integer`.

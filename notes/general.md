@@ -36,3 +36,6 @@ switch (myThingy) {
 		break;
 }
 ```
+
+### Exiting a for look
+You can do so with the `break;` instruction.

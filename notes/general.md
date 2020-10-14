@@ -38,4 +38,4 @@ switch (myThingy) {
 ```
 
 ### Exiting a for look
-You can do so with the `break;` instruction.
+You can do so with the `break;` instruction. Also you can do a `continue;` which also breaks the execution flow of the current iteration but keeps the loop going.

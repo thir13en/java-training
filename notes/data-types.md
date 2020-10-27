@@ -20,6 +20,13 @@ You can do so with:
 String.format("%.2f", 700.0000000000001); // 700.00
 ```
 
+#### Parsing `String` values
+* to `Integer`
+```java
+int number = Integer.parseInt(numberAsString);
+double number = Double.parseDouble(numberAsString);
+```
+
 ### Wrapper classes
 Java uses the concept of `wrapper class` for the primitive values, for example in the case of `int`, we got the wrapper class `Integer`.
 

@@ -39,3 +39,6 @@ switch (myThingy) {
 
 ### Exiting a for look
 You can do so with the `break;` instruction. Also you can do a `continue;` which also breaks the execution flow of the current iteration but keeps the loop going.
+
+### Check initialized
+To check if a certain variable is initialized, just to `if (foo != null)`.

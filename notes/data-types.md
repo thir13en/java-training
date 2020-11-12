@@ -27,6 +27,12 @@ int number = Integer.parseInt(numberAsString);
 double number = Double.parseDouble(numberAsString);
 ```
 
+#### Comparing and checking emptyness
+```java
+stringFoo.isEmpty();
+stringFoo.equals(stringVar);
+```
+
 ### Wrapper classes
 Java uses the concept of `wrapper class` for the primitive values, for example in the case of `int`, we got the wrapper class `Integer`.
 

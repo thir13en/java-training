@@ -16,6 +16,7 @@ public class Kebab {
 }
 ```
 We can even call a constructor from another constructor to initialize with default values.
+```
 public class Kebab {
 	public Kebab() {
 		this('Yougurt', true); // calls to another constructor must be the very first line of the constructor
@@ -25,3 +26,6 @@ public class Kebab {
 	}
 }
 ```
+
+### Initializing properties
+As a rule of thumb, set properties directly in the constructor by assignation, not by calling the setter, which is reserved for used outside the constructor. 

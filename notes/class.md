@@ -5,7 +5,14 @@
 When invoked inside the class, the `this` keyword is `NOT` necessary.
 
 ### Method overloading
-Consists on using the same method name but with different paramenters. It does NOT work just by reusing the same signature and parameters and changing the return type, it needs to change the number of parameters.
+Consists on using the same method name but with different paramenters. It does **NOT** work just by reusing the same signature and parameters and changing the return type, it needs to change the number or type of parameters.  
+It is often related with **polymorphism**, but it has nothing to do with it. It is often referred as **Compile Time Polymorphism**.  
+You can overload `static` and `instance` methods. 
+
+### Method overriding
+It is actual **Runtime Polymorphism** and **Dynamic Method Dispatch**, it consist en defining a method signature that already exists in the parent class, and overriding it's implementation with the `@Override` decorator.  
+Overriden method **can't** have a less restrictive modifier, for example `protected` => `public` will fail, while `protected` => `private` won't. You can use `super.<methodName>()` to still call the non-overriden method.  
+Al a last note, the overriden method **can't** throw a new or broader checked exception. 
 
 ### Constructor syntax
 ```java

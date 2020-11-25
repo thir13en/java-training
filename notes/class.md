@@ -41,3 +41,6 @@ As a rule of thumb, set properties directly in the constructor by assignation, n
 `super` is used to access the superclass methods, while `this` accesses the current instance. It is used for usually with method overriding, for specifying that we want to explicitly call the superclass method. By default, constructors add a call to `super()` superclass constructor with no arguments (empty constructor). An `abstract class` is still a superclass and it's constructor is called whenever instantiated.
 * call to parent constructor: `super(...args)`
 * call to current instrance constructor: `this(...args)`
+
+### Static vs Instance methods and properties
+`Static` modifier tells us that a method or property is not an instance one, but can be accesses directly though the class declaration, i.e. `ClassName.staticMethod()`. On the opposite, to use an `Instance` method or property, we first need to craete or instance a class with the `new` keyword.

@@ -4,6 +4,7 @@
 1. [Closures](closures.md)
 1. [Composition](composition.md)
 1. [Console I/O](console-io.md)
+1. [Composition](concurrency.md)
 1. [Data Types](data-types.md)
 1. [Encapsulation](encapsulation.md)
 1. [General](general.md)

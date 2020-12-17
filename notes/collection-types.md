@@ -3,10 +3,10 @@
 ### Array
 #### Syntax:
 ```java
-int[] numbers = new int[10];
+int[] numbers = new int[10]; // Creates an array with 10 uninitialized positions
 numbers[5] = 55;
 // or
-int[] otherNumbers = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+int[] otherNumbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 ```
 #### Simple iteratation
 ```java

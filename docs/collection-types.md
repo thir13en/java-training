@@ -16,3 +16,9 @@ public static void printArray(int[] array) {
 	}
 }
 ```
+
+### Sort an Array
+This mutates the original array:
+```java
+Arrays.sort(copyintegers);
+```

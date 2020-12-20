@@ -1,5 +1,7 @@
 # Data Types
 
+### Reference Types vs Value Types
+When you assign a variable to another, if it contains a primitive data type such as an `int`, it generates a new position of memory to hold that value, in other words, you assign the value that the variable holds, this is not true for `Reference Types`, such as an `Array`. In the latter case, you'd assign the pointer to the memory position that holds this type, or the **reference** to it, so changin one of the variables that holds the pointer would change all other variables that are holding this pointer.
 
 ### Primitive data types
 1. boolean

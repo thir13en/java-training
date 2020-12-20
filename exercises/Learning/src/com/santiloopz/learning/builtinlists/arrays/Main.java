@@ -1,4 +1,4 @@
-package com.santiloopz.learning.builtinlists.collections;
+package com.santiloopz.learning.builtinlists.arrays;
 
 import java.util.Arrays;
 import java.util.Collections;

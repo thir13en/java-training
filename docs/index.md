@@ -7,6 +7,7 @@
 1. [Composition](concurrency.md)
 1. [Data Types](data-types.md)
 1. [Encapsulation](encapsulation.md)
+1. [Functional Programming](functional-programming.md)
 1. [General](general.md)
 1. [IDE](ide.md)
 1. [Inheritance](inheritance.md)

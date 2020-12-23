@@ -3,9 +3,8 @@ package com.santiloopz.learning.builtinlists.arrays;
 import java.util.Scanner;
 
 public class MinElement {
-    private static final Scanner scanner = new Scanner(System.in);
-
     public static int readInteger() {
+        Scanner scanner = new Scanner(System.in);
         System.out.println("Add a number");
         if (scanner.hasNextInt()) {
             return scanner.nextInt();
@@ -13,13 +12,28 @@ public class MinElement {
         return 0;
     }
 
-    public static int readElements(int elementsCount) {
-        System.out.println("Enter " + elementsCount + " numbers:\r");
-        for (int i=0; i<elementsCount; i++) {
+    public static int[] readElements(int count) {
+        Scanner scanner = new Scanner(System.in);
+        int[] numbers = new int[count];
+        System.out.println("Enter " + count + " numbers:\r");
+        for (int i=0; i<count; i++) {
             if (scanner.hasNextInt()) {
-                scanner.nextInt();
+                numbers[i] = scanner.nextInt();
+                scanner.nextLine();
             }
         }
-        return 0;
+        return numbers;
+    }
+
+    public static int findMin(int[] numbers) {
+        int min = numbers[0];
+
+        for (int i=1; i<numbers.length; i++) {
+            if (min > numbers[i]) {
+                min = numbers[i];
+            }
+        }
+
+        return min;
     }
 }

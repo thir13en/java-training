@@ -1,6 +1,9 @@
 # Console I/O
 
 
+### Gotchas
+If you are reading multiple inputs from the user, remember to call `scanner.nextLine()` after every input reading, in order to jump to the next line in the console.
+
 ### Print to the console
 No line break:
 `System.out.print(myString)`

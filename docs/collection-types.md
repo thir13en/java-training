@@ -1,6 +1,7 @@
 # Collection Types
 
 ### Array
+Arrays inherit from the `List` object.
 #### Syntax:
 ```java
 int[] numbers = new int[10]; // Creates an array with 10 uninitialized positions
@@ -25,7 +26,31 @@ This mutates the original array:
 Arrays.sort(copyintegers);
 ```
 
+### Resizing an Array
+#### The Manual way
+You should copy the old array in a new one and then reassign the new size to the array and loop through the original one to fill up the newly assigned array.
+
 ### Output an Array
 ```java
 System.out.println(Arrays.toString(arrayName));
+```
+
+### Lists
+An **Interface** that represents the structure for an **ordered collection or sequence** of elements.
+
+#### ArrayLists
+Extends from `AbstractList` which implements the `List` interface. The interesting feature of `ArrayLists` is that they assign new memory space dynamically when they are resized. `ArrayList` are defined with a **generic type** which informs the compiler on what kind of data they are holding:
+```java
+private ArrayList<String> myArrayList = new ArrayList<String>();
+
+private void addElementToArrayList(String el) {
+	// the logic for resizing and assigning is handled automagically
+	myArrayList.add(el);
+}
+private void replaceElementInArrayList(int position, String el) {
+	myArrayList.set(position, el);
+}
+private void removeElementInArrayList(int position) {
+	myArrayList.remove(position);
+}
 ```

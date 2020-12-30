@@ -53,4 +53,11 @@ private void replaceElementInArrayList(int position, String el) {
 private void removeElementInArrayList(int position) {
 	myArrayList.remove(position);
 }
+private boolean containsElement(String el) {
+	return myArrayList.contains(el);
+}
+private int containsElementByIndexOf(String el) {
+	// returns -1 if not, otherwise returns the element
+	return myArrayList.indexOf(el);
+}
 ```

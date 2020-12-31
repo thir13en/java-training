@@ -60,4 +60,8 @@ private int containsElementByIndexOf(String el) {
 	// returns -1 if not, otherwise returns the element
 	return myArrayList.indexOf(el);
 }
+private void cloneArray(String el) {
+	// adds the content of one array to the other
+	myArrayList.addAll(readyPopulatedArrayList);
+}
 ```

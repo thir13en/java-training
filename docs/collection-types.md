@@ -64,4 +64,15 @@ private void cloneArray(String el) {
 	// adds the content of one array to the other
 	myArrayList.addAll(readyPopulatedArrayList);
 }
+private void cloneOnInitializing(String el) {
+	// adds the content of one array to the other
+	ArrayList<String> myArrayList = new ArrayList<String>(readyPopulatedArrayList);
+}
+private void convertToArray(String el) {
+	// adds the content of one array to the other
+	ArrayList<String> myArrayList = new ArrayList<String>();
+	// ... populate
+	String[] myPureArray = new String[myArrayList.size()];
+	myPureArray = myArrayList.toArray(myPureArray);
+}
 ```

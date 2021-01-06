@@ -1,4 +1,6 @@
-# Collection Types
+# List Types
+
+List is a `java` interface that is implemented by many casses.
 
 ### Array
 Arrays inherit from the `List` object.

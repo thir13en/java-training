@@ -3,7 +3,7 @@ package com.santiloopz.learning.oop.billburgers;
 public class Hamburger {
     private final String name;
     private final String meat;
-    private final double price;
+    protected final double price;
     private final String breadRollType;
     protected String addition1Name;
     protected double addition1Price;

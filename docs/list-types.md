@@ -94,8 +94,35 @@ for (int i=0; i<=10; i++) {
 	myArrayInt.add(Integer.valueOf(i));
 }
 
-for (int i=0; i<=myArrayInt.length; i++) {
+for (int i=0; i<=myArrayInt.size(); i++) {
 	// This is Unboxing
 	System.out.println(i + ". value is " + myArrayInt.get(i).intValue());
+}
+```
+But this is not really `auto`, is it? We needed to write quite some amount of code to do such a simple thing. Don't worry, `java` has you covered:
+```java
+Integer myInteger = new Integer(22);
+// Equals
+Integer myInteger = 22;
+```
+At compile time, the second expression will be converted into the first one. **This is autoboxing**.
+```java
+Integer myInteger = new Integer(22);
+int myInt = myInteger; // Compiler does not complain... UNBOXING!!!
+// Behind the scenes, at compile time, this is converted to
+int myInt = myInteger.intValue();
+```
+So now lets make the code before more readable and easy, leveraging on this:
+```java
+private ArrayList<Integer> myArrayInt = new ArrayList<Integer>();
+
+for (int i=0; i<=10; i++) {
+	// This is Autoboxing
+	myArrayInt.add(i);
+}
+
+for (int i=0; i<=myArrayInt.size(); i++) {
+	// This is Unboxing
+	System.out.println(i + ". value is " + myArrayInt.get(i));
 }
 ```

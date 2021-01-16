@@ -21,10 +21,10 @@ public class HealthyBurger extends Hamburger {
     }
 
     @Override
-    public double itemizeBurger() {
-        double totalPrice = this.price;
-        totalPrice += this.healthyExtra1Price > 0 ? this.addition1Price : 0;
-        totalPrice += this.healthyExtra2Price > 0 ? this.addition2Price : 0;
+    public double itemizeHamburger() {
+        double totalPrice = super.itemizeHamburger();
+        totalPrice += this.healthyExtra1Price > 0 ? this.healthyExtra1Price : 0;
+        totalPrice += this.healthyExtra2Price > 0 ? this.healthyExtra2Price : 0;
         return totalPrice;
     }
 }

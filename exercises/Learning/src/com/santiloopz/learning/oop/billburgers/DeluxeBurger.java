@@ -3,10 +3,8 @@ package com.santiloopz.learning.oop.billburgers;
 public class DeluxeBurger extends Hamburger{
     public DeluxeBurger() {
         super("Deluxe Burger", "Vegan", 19.1, "Seeds");
-        this.addition1Name = "Drink";
-        this.addition1Price = 0;
-        this.addition2Name = "Chips";
-        this.addition2Price = 0;
+        super.addHamburgerAddition1("Drink", 0);
+        super.addHamburgerAddition2("Chips", 0);
     }
 
     @Override

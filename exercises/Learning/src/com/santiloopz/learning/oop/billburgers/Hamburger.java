@@ -1,18 +1,18 @@
 package com.santiloopz.learning.oop.billburgers;
 
 public class Hamburger {
-    private final String name;
-    private final String meat;
-    protected final double price;
-    private final String breadRollType;
-    protected String addition1Name;
-    protected double addition1Price;
-    protected String addition2Name;
-    protected double addition2Price;
-    protected String addition3Name;
-    protected double addition3Price;
-    protected String addition4Name;
-    protected double addition4Price;
+    private String name;
+    private String meat;
+    private double price;
+    private String breadRollType;
+    private String addition1Name;
+    private double addition1Price;
+    private String addition2Name;
+    private double addition2Price;
+    private String addition3Name;
+    private double addition3Price;
+    private String addition4Name;
+    private double addition4Price;
 
     public Hamburger(String name, String meat, double price, String breadRollType) {
         this.name = name;
@@ -41,7 +41,7 @@ public class Hamburger {
         this.addition4Price = price;
     }
 
-    public double itemizeBurger() {
+    public double itemizeHamburger() {
         double totalPrice = this.price;
         totalPrice += this.addition1Price > 0 ? this.addition1Price : 0;
         totalPrice += this.addition2Price > 0 ? this.addition2Price : 0;

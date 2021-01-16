@@ -78,3 +78,24 @@ private void convertToArray(String el) {
 	myPureArray = myArrayList.toArray(myPureArray);
 }
 ```
+
+### Autoboxing and Unboxing
+If we try something like:
+```java
+private ArrayList<int> myArrayInt = new ArrayList<int>();
+```
+We get the error: `Type argument cannot be of primitive type`. A primitive type is **not** a `class`, and we need a `class` to be contained within an `ArrayList`. Basically when we want to deal with `primitive data types` in `ArrayList`, we will need to use the `Wrapper Class`, in this case `Integer`.  
+To fill an `ArrayList` with numbers, here you are some code example:  
+```java
+private ArrayList<Integer> myArrayInt = new ArrayList<Integer>();
+
+for (int i=0; i<=10; i++) {
+	// This is Autoboxing
+	myArrayInt.add(Integer.valueOf(i));
+}
+
+for (int i=0; i<=myArrayInt.length; i++) {
+	// This is Unboxing
+	System.out.println(i + ". value is " + myArrayInt.get(i).intValue());
+}
+```

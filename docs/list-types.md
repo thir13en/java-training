@@ -3,8 +3,7 @@
 List is a `java` interface that is implemented by many casses.
 
 ### Array
-Arrays are represented by the `ArrayList` Class which inherit (or implements??? firgure out) from the `List` object.
-
+Arrays inherit from the `List` object.
 #### Syntax:
 ```java
 int[] numbers = new int[10]; // Creates an array with 10 uninitialized positions

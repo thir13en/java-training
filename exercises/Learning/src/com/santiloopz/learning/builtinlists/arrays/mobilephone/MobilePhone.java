@@ -3,15 +3,15 @@ package com.santiloopz.learning.builtinlists.arrays.mobilephone;
 import java.util.ArrayList;
 
 public class MobilePhone {
-    private String myNumber;
-    private ArrayList<Contact> myContacts;
+    private final String myNumber;
+    private final ArrayList<Contact> myContacts;
 
     public MobilePhone(String myNumber) {
         this.myNumber = myNumber;
         this.myContacts = new ArrayList<Contact>();
     }
 
-    public int findContact(String contactName) {
+    private int findContact(String contactName) {
         for (int i=0; i<this.myContacts.size(); i++) {
             if (this.myContacts.get(i).getName() == contactName) {
                 return i;
@@ -25,19 +25,23 @@ public class MobilePhone {
     }
 
     public boolean addNewContact(Contact contact) {
-        if (this.findContact(contact)) {
+        if (this.findContact(contact) != -1) {
             return false;
         }
+
         this.myContacts.add(contact);
+
+        return true;
     }
 
-    public boolean updateContact(Contact contact) {
-        int existingContactPos = this.findContact(contact);
+    public boolean updateContact(Contact oldContact, Contact newContact) {
+        int existingContactPos = this.findContact(oldContact);
 
         if (existingContactPos == -1) {
             return false;
         }
-        this.myContacts.get(existingContactPos).update(contact);
+
+        this.myContacts.set(existingContactPos, newContact);
 
         return true;
     }
@@ -66,8 +70,7 @@ public class MobilePhone {
     public void printContacts() {
         System.out.println("Contact List:");
         for (int i=1; i<=this.myContacts.size(); i++) {
-            Contact current = this.myContacts.get(i).getName();
-            System.out.println(i + ". " + current.getName() + " -> " + current.getPhone());
+            System.out.println(i + ". " + this.myContacts.get(i).getName() + " -> " + this.myContacts.get(i).getPhoneNumber());
         }
     }
 

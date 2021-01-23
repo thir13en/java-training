@@ -3,8 +3,8 @@ package com.santiloopz.learning.builtinlists.arrays.mobilephone;
 import java.util.ArrayList;
 
 public class MobilePhone {
-    private final String myNumber;
-    private final ArrayList<Contact> myContacts;
+    private String myNumber;
+    private ArrayList<Contact> myContacts;
 
     public MobilePhone(String myNumber) {
         this.myNumber = myNumber;
@@ -13,14 +13,14 @@ public class MobilePhone {
 
     private int findContact(String contactName) {
         for (int i=0; i<this.myContacts.size(); i++) {
-            if (this.myContacts.get(i).getName() == contactName) {
+            if (this.myContacts.get(i).getName().equals(contactName)) {
                 return i;
             }
         }
         return -1;
     }
 
-    public int findContact(Contact contact) {
+    private int findContact(Contact contact) {
         return this.findContact(contact.getName());
     }
 
@@ -69,9 +69,8 @@ public class MobilePhone {
 
     public void printContacts() {
         System.out.println("Contact List:");
-        for (int i=1; i<=this.myContacts.size(); i++) {
-            System.out.println(i + ". " + this.myContacts.get(i).getName() + " -> " + this.myContacts.get(i).getPhoneNumber());
+        for (int i=0; i<this.myContacts.size(); i++) {
+            System.out.println((i+1) + ". " + this.myContacts.get(i).getName() + " -> " + this.myContacts.get(i).getPhoneNumber());
         }
     }
-
 }

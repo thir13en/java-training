@@ -8,7 +8,9 @@ public class Main {
 
         bank.addCustomer("Berlin", "Natalia", 7777.77);
 
-        bank.addBranch("Barcelona");
+        if (bank.addBranch("Barcelona")) {
+            System.out.println("Barcelona branch created");
+        }
 
         bank.addCustomer("Barcelona", "Tesla", 9999.99);
 
@@ -21,6 +23,14 @@ public class Main {
 
         if (!bank.addBranch("Barcelona")) {
             System.out.println("Error, Barcelona branch already exists.");
+        }
+
+        if (!bank.addCustomerTransaction("Berlin", "Remigio", 8888.88)) {
+            System.out.println("Customer Remigio does not exist");
+        }
+
+        if (!bank.addCustomer("Barcelona", "Tesla", 3333.33)) {
+            System.out.println("Customer Tesla already exists");
         }
     }
 }

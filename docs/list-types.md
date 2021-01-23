@@ -3,7 +3,8 @@
 List is a `java` interface that is implemented by many casses.
 
 ### Array
-Arrays inherit from the `List` object.
+Arrays inherit from the `List` object. Plain arrays **can only store primitive types**.
+
 #### Syntax:
 ```java
 int[] numbers = new int[10]; // Creates an array with 10 uninitialized positions
@@ -13,6 +14,7 @@ int[] otherNumbers = { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 // or reassigning (de-referencing)
 initializedArray = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 ```
+
 #### Simple iteratation
 ```java
 public static void printArray(int[] array) {
@@ -126,3 +128,15 @@ for (int i=0; i<=myArrayInt.size(); i++) {
 	System.out.println(i + ". value is " + myArrayInt.get(i));
 }
 ```
+
+### Memory Management
+In regular `Arrays` (not `ArrayLists`), `Java` allocates **4 bytes of memory for `int`** for every position. Here you have an example:
+![Memory Allocation](img/lists1.png)  
+So `Java` accesses arrays by adding (Position * 4) to the first memory position of the array, in the prior example for position 3 that'd be: `100 + 3 * 4 = 112`.
+1. int -> 4 bytes
+1. double -> 8 bytes.  
+What about strings...? They have **variable size**. Well, for that we have `LinkedLists`!
+
+### LinkedLists
+This is another type of `List`, where the `value` is actually a pointer to the position of memory where our data is kept.
+![Memory Allocation](img/lists2.png)  

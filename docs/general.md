@@ -42,3 +42,6 @@ You can do so with the `break;` instruction. Also you can do a `continue;` which
 
 ### Check initialized
 To check if a certain variable is initialized, just to `if (foo != null)`.
+
+### Assignment
+Java does assign values by memory position, so if you assign a `Class` to another one, you are actually assigning the `pointer` to that class, and changes to one of the classes will reflect in the other one!

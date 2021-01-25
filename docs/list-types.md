@@ -54,6 +54,10 @@ private void addElementToArrayList(String el) {
 private void replaceElementInArrayList(int position, String el) {
 	myArrayList.set(position, el);
 }
+private void insertElementInPosition(int position, String el) {
+	// This will move the rest of the elements one position, obvoiusly
+	myArrayList.add(position, el);
+}
 private void removeElementInArrayList(int position) {
 	myArrayList.remove(position);
 }
@@ -140,3 +144,4 @@ What about strings...? They have **variable size**. Well, for that we have `Link
 ### LinkedLists
 This is another type of `List`, where the `value` is actually a pointer to the position of memory where our data is kept.
 ![Memory Allocation](img/lists2.png)  
+Java's `garbage collection` takes responsability of cleaning the array positions that are not consumed anymore.

@@ -144,4 +144,7 @@ What about strings...? They have **variable size**. Well, for that we have `Link
 ### LinkedLists
 This is another type of `List`, where the `value` is actually a pointer to the position of memory where our data is kept.
 ![Memory Allocation](img/lists2.png)  
-Java's `garbage collection` takes responsability of cleaning the array positions that are not consumed anymore.
+Java's `garbage collection` takes responsability of cleaning the array positions that are not consumed anymore.  
+LinkedLists are specially useful when you are dealing with massive arrays repositioning, **LinkedList stores in every position the data that belongs to it and a Link to the next element in the array**, the last position of the list link has a null pointer to indicate the ending.  
+![Memory Allocation](img/lists3.png)  
+In linked lists, if you want to add or replace an element to the array, you **don't need to move all the elements, just replace one single pointer, booom!**.

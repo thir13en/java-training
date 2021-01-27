@@ -14,6 +14,7 @@
 
 ### Type shortcuts
 * `sout` -> `System.out.println`
+* `psvm` -> `private static void main(String[] args) {}`
 
 ### Set up Java Compiler version
 Go to `File -> Settings -> Build, execution, deployment -> Compiler -> Choose your compiler version`.

@@ -169,3 +169,31 @@ while(i.hasNext()) {
 	System.out.println("Now visiting " + i.next());
 }
 ```
+Adding a new entry
+```java
+import java.util.LinkedList
+
+LinkedList<String> linkedListName = new LinkedList<String>();
+
+// Adding elements
+linkedListName.add("Barcelona");
+linkedListName.add("Madrid");
+linkedListName.add("Granada");
+
+// Adds to the first position and moves the rest of elements one position with a very low computational cost, 
+// we only need to change one pointer and point the new element to the next one
+linkedListName.add(1, "Valencia");
+
+// You could also remove elements with the same low cost
+linkedListName.remove(2);
+
+// Create a reference to the linked list iterator
+Iterator<String> i = linkedListName.interator();
+
+// boolean, is there another entry?
+while(i.hasNext()) {
+	// Consume to the next entry
+	System.out.println("Now visiting " + i.next());
+}
+```
+The cool thing about LinkedLists, is that this pointer reassignment is done in a total transparent way towards the developer.

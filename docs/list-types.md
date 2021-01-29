@@ -197,3 +197,38 @@ while(i.hasNext()) {
 }
 ```
 The cool thing about LinkedLists, is that this pointer reassignment is done in a total transparent way towards the developer.
+
+### ListIterators
+```java
+import java.util.LinkedList
+import java.util.ListIterator
+
+ListIterator<String> stringListIterator = linkedListName.listIterator();
+
+
+private boolean addNewCity(newCity) {
+	while(stringListIterator.hasNext()) {
+		// This comparison returns 0 when the next value and the compareTo parameter are equal
+		int comparison = stringListIterator.next().compareTo(newCity);
+
+		if (comparison == 0) {
+			System.out.println("New city already included as a destination");
+			return false;
+		}
+		if (comparison > 0) {
+			// The passes value is alfabetically prior to the compared one
+			System.out.println("New city should occupy this position");
+			// since we moved to the next position, we need to get back and insert the value before
+			// go back to the previous entry
+			stringListIterator.previous();
+			// Adds the value in the current position
+			stringListIterator.add(newCity);
+			return true;
+		}
+		// comparison < 0
+		// in this case we don't want to do anyting, move to the next record
+	}
+	// If we get out of the while look, it means the new value should be added in the last position
+	stringListIterator.add(newCity);
+}
+```

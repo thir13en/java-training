@@ -198,7 +198,7 @@ while(i.hasNext()) {
 ```
 The cool thing about LinkedLists, is that this pointer reassignment is done in a total transparent way towards the developer.
 
-### ListIterators
+#### ListIterators
 ```java
 import java.util.LinkedList
 import java.util.ListIterator
@@ -230,5 +230,44 @@ private boolean addNewCity(newCity) {
 	}
 	// If we get out of the while look, it means the new value should be added in the last position
 	stringListIterator.add(newCity);
+
+	return true;
 }
+```
+
+#### Implementation details
+`LinkedLists` in `Java` are actually **Double Linked List**, in the sense that they hold a reference to the next value in the list but also to the previous, which makes it possible to navigate them in both directions.
+
+#### Iterator methods
+```java
+private Iterator<String> stringListIterator = myLinkedList.iterator();
+
+private boolean checkHasNextElement(Iterator<String> stringListIterator) {
+	return stringListIterator.hasNext();
+}
+private String returnNextElement(Iterator<String> stringListIterator) {
+	return stringListIterator.next();
+}
+private String returnFirstElement(Iterator<String> stringListIterator) {
+	return stringListIterator.getFirst();
+}
+private boolean checkEmpty(Iterator<String> stringListIterator) {
+	return stringListIterator.isEmpty();
+}
+```
+
+#### Iterator gotchas
+If you go read the value of an `Iterator` though a `next`, and you read the `previous` value, you will realize that you just read the same value two times! This is because the way the iterator is implemented in `Java`, **there is no current position as such**, what is being held is a couple of pointers to the element that would be returned by a call of `previous`, which is the last element on which a `next` was done, and the `next` element itself, like this:
+```
+	Element1 ----<--previous--Pointer--next----> Element2 ----- Element3
+	# Returns Element2
+```
+If we do next:
+```
+	Element1 ----- Element2 <----previous--Pointer--next----> Element3
+```
+And now previous:
+```
+	Element1 <----previous--Pointer--next----> Element2 ----- Element3
+	# Returns Element2
 ```

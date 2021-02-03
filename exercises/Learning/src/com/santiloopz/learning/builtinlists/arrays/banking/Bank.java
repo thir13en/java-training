@@ -12,6 +12,17 @@ public class Bank {
     }
 
     public boolean addBranch(String branchName) {
+        for (int i=0; i<branches.size(); i++) {
+            if (branches.get(i).getName().equals(branchName)) {
+                System.out.println("Branch is already in the Bank");
+                return false;
+            }
+        }
+        branches.add(new Branch(branchName));
         return true;
+    }
+
+    public boolean addCustomer(String name, String branch, double initialTransaction) {
+        return false;
     }
 }

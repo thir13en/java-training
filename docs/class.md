@@ -12,7 +12,7 @@ You can overload `static` and `instance` methods.
 ### Method overriding
 It is actual **Runtime Polymorphism** and **Dynamic Method Dispatch**, it consist en defining a method signature that already exists in the parent class, and overriding it's implementation with the `@Override` decorator.  
 Overriden method **can't** have a less restrictive modifier, for example `protected` => `public` will fail, while `protected` => `private` won't. You can use `super.<methodName>()` to still call the non-overriden method.  
-Al a last note, the overriden method **can't** throw a new or broader checked exception. 
+As a last note, the overriden method **can't** throw a new or broader checked exception. 
 
 ### Constructor syntax
 ```java
@@ -23,7 +23,7 @@ public class Kebab {
 }
 ```
 We can even call a constructor from another constructor to initialize with default values.
-```
+```java
 public class Kebab {
 	public Kebab() {
 		this('Yougurt', true); // calls to another constructor must be the very first line of the constructor

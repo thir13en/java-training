@@ -15,8 +15,15 @@ public class Branch {
         return name;
     }
 
-    public ArrayList<Customer> getCustomers() {
-        return customers;
+    public ArrayList<Customer> getCustomers() { return customers; }
+
+    public boolean newCustomer(String customerName, double initialTransaction) {
+        Customer customer = findCustomer(customerName);
+        if (customer != null) {
+            return false;
+        }
+        customers.add(new Customer(customerName, initialTransaction));
+        return true;
     }
 
     public Customer findCustomer(String customerName) {
@@ -26,5 +33,14 @@ public class Branch {
             }
         }
         return null;
+    }
+
+    public boolean addCustomerTransaction(String customerName, double transaction) {
+        Customer customer = findCustomer(customerName);
+        if (customer == null) {
+            return false;
+        }
+        customer.addTransaction(transaction);
+        return true;
     }
 }

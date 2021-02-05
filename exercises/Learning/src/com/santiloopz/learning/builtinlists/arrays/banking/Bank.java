@@ -27,8 +27,7 @@ public class Bank {
         if (branch != null) {
             Customer customer = branch.findCustomer(customerName);
             if (customer == null) {
-                // TODO
-                branch.addCustomer();
+                addCustomer(customerName, branchName, initialTransaction);
                 return true;
             }
         }
@@ -42,5 +41,13 @@ public class Bank {
             }
         }
         return null;
+    }
+
+    public boolean addCustomerTransaction(String branchName, String customerName, double transaction) {
+        Branch branch = findBranch(branchName);
+        if (branch == null) {
+            return false;
+        }
+        return branch.addCustomerTransaction(customerName, transaction);
     }
 }

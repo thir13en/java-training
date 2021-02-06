@@ -22,19 +22,22 @@ public class Bank {
         return true;
     }
 
-    public boolean addCustomer(String customerName, String branchName, double initialTransaction) {
+    public boolean addCustomer(String branchName, String customerName, double initialTransaction) {
         Branch branch = findBranch(branchName);
         if (branch != null) {
-            Customer customer = branch.findCustomer(customerName);
-            if (customer == null) {
-                addCustomer(customerName, branchName, initialTransaction);
-                return true;
+            ArrayList<Customer> customers = branch.getCustomers();
+            for (Customer customer : customers) {
+                if (customer.getName().equals(customerName)) {
+                    return false;
+                }
             }
+            branch.newCustomer(customerName, initialTransaction);
+            return true;
         }
         return false;
     }
 
-    public Branch findBranch(String branchName) {
+    private Branch findBranch(String branchName) {
         for (Branch branch : branches) {
             if (branch.getName().equals(branchName)) {
                 return branch;
@@ -49,5 +52,28 @@ public class Bank {
             return false;
         }
         return branch.addCustomerTransaction(customerName, transaction);
+    }
+
+    public boolean listCustomers(String branchName, boolean printTransactions) {
+        Branch branch = findBranch(branchName);
+        if (branch == null) {
+            return false;
+        }
+        ArrayList<Customer> customers = branch.getCustomers();
+
+        System.out.println("Customer details for branch " + branch.getName());
+        for (int i=0; i<customers.size(); i++) {
+            Customer currentCustomer = customers.get(i);
+            System.out.println("Customer: " + currentCustomer.getName() + "[" + (i+1) + "]");
+            ArrayList<Double> transactions = currentCustomer.getTransactions();
+
+            if (printTransactions) {
+                System.out.println("Transactions");
+                for (int j=0; j< transactions.size(); j++) {
+                    System.out.println("[" + (j+1) + "]  Amount " + transactions.get(j));
+                }
+            }
+        }
+        return true;
     }
 }

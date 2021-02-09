@@ -18,6 +18,7 @@
 1. [List Types](list-types.md)
 1. [Math](math.md)
 1. [Modifiers](modifiers.md)
+1. [Performance](performance.md)
 1. [Polymorphism](polymorphism.md)
 1. [Relevant Folks](relevant-folks.md)
 1. [Tools](tools.md)

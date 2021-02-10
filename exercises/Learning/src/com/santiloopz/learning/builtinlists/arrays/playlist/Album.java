@@ -23,7 +23,7 @@ public class Album {
         return true;
     }
 
-    public Song findSong(String title) {
+    private Song findSong(String title) {
         for (Song song : songs) {
             if (song.getTitle().equals(title)) {
                 return song;
@@ -32,17 +32,30 @@ public class Album {
         return null;
     }
 
-    public boolean addToPlaylist(int trackNumber, LinkedList<Song> playlist) {
-        Song songToAdd = songs.get(trackNumber);
+    public boolean addToPlayList(int trackNumber, LinkedList<Song> playlist) {
+        if (trackNumber < 1 || songs.size() > trackNumber) {
+            return false;
+        }
+
+        playlist.add(songs.get(trackNumber - 1));
+        return true;
+    }
+
+    public boolean addToPlayList(String songTitle, LinkedList<Song> playlist) {
+        Song songToAdd = null;
+
+        for (Song song : songs) {
+            if (song.getTitle().equals(songTitle)) {
+                songToAdd = song;
+                break;
+            }
+        }
 
         if (songToAdd == null) {
             return false;
         }
 
+        playlist.add(songToAdd);
         return true;
-    }
-
-    public boolean addToPlaylist() {
-        return false;
     }
 }

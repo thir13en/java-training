@@ -271,3 +271,12 @@ And now previous:
 	Element1 <----previous--Pointer--next----> Element2 ----- Element3
 	# Returns Element2
 ```
+
+### The ForEach command
+Allows us to have a cleaner syntax to iterate over elements:
+```java
+for (ElementType element :  elements) {
+	// Do something
+}
+```
+

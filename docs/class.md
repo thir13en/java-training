@@ -46,3 +46,9 @@ As a rule of thumb, set properties directly in the constructor by assignation, n
 `Static` modifier tells us that a method or property is not an instance one, but can be accesses directly though the class declaration, i.e. `ClassName.staticMethod()`. On the opposite, to use an `Instance` method or property, we first need to craete or instance a class with the `new` keyword.  
 If you change a `static` field in one class, the change will propagate to the others, because that field belongs to the object that holds the class. So actually you do not change all other instances, but the value of the memory position that holds the pointer of the static method will be changed.
 `Instance fields`, on the contrary, represent the specific **state** of an instantiated element. 
+
+### toString
+Every Class implements a `toString` method that by default provides the fully qualified name of the class (package + className) @ the position of memory at runtime:
+```
+com.santiloopz.MyClass@dfasdcx 
+```

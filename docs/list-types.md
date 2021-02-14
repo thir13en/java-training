@@ -257,6 +257,7 @@ private boolean checkEmpty(Iterator<String> stringListIterator) {
 ```
 
 #### Iterator gotchas
+##### previous and next
 If you go read the value of an `Iterator` though a `next`, and you read the `previous` value, you will realize that you just read the same value two times! This is because the way the iterator is implemented in `Java`, **there is no current position as such**, what is being held is a couple of pointers to the element that would be returned by a call of `previous`, which is the last element on which a `next` was done, and the `next` element itself, like this:
 ```
 	Element1 ----<--previous--Pointer--next----> Element2 ----- Element3
@@ -270,6 +271,16 @@ And now previous:
 ```
 	Element1 <----previous--Pointer--next----> Element2 ----- Element3
 	# Returns Element2
+```
+##### remove error
+If you try to remove the same elemnt twice, the second time you will get an error, because you are trying to remove an already deleted element, to avoid that, you need to navigate to the `previous` position right after deleting:
+```java
+myIterator.remove(); // Removes an element from the LinkedList
+myIterator.remove(); // Throws an error
+// To avoid
+myIterator.remove(); // Removes an element from the LinkedList
+myIterator.next(); // Moves to the next element
+myIterator.remove(); // Removed the next element, if next was possible (hasNext == true)
 ```
 
 ### The ForEach command

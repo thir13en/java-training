@@ -12,6 +12,7 @@
 1. [IDE](ide.md)
 1. [Inheritance](inheritance.md)
 1. [Install Linux](install-linux.md)
+1. [Interfaces](interfaces.md)
 1. [Some History](some-history.md)
 1. [JDK](jdk.md)
 1. [JVM](jvm.md)

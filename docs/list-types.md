@@ -2,6 +2,9 @@
 
 List is a `java` interface that is implemented by many casses.
 
+### The List Interface
+All List listed in this section extend from the List interface.
+
 ### Array
 Arrays inherit from the `List` object. Plain arrays **can only store primitive types**.
 

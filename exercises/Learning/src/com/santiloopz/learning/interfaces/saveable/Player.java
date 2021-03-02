@@ -59,7 +59,7 @@ public class Player {
     }
 
     public void write(List<String> values) {
-        if (values.size() > 0) {
+        if (values != null && values.size() > 0) {
             for (int i=0; i<values.size(); i++) {
                 switch (i) {
                     case 0:

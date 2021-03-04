@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player implements ISaveable {
-    private String name;
-    private String weapon;
-    private int hitPoints;
-    private int strength;
+    String name;
+    String weapon;
+    int hitPoints;
+    int strength;
 
     public Player(String name, int hitPoints, int strength) {
         this.name = name;
@@ -48,31 +48,30 @@ public class Player implements ISaveable {
         this.strength = strength;
     }
 
-    public List<String> write() {
-        List<String> values = new ArrayList<String>();
-        values.add(this.name);
-        values.add(String.valueOf(this.hitPoints));
-        values.add(String.valueOf(this.strength));
-        values.add(this.weapon);
-
-        return values;
+    public void read(List<String> list) {
+        if (list != null && list.size() > 0) {
+            list.add(this.name);
+            list.add(String.valueOf(this.hitPoints));
+            list.add(String.valueOf(this.strength));
+            list.add(this.weapon);
+        }
     }
 
-    public void read(List<String> values) {
-        if (values != null && values.size() > 0) {
-            for (int i=0; i<values.size(); i++) {
-                switch (i) {
-                    case 0:
-                        this.setName(values.get(i));
-                    case 1:
-                        this.setHitPoints(Integer.parseInt(values.get(i)));
-                    case 2:
-                        this.setStrength(Integer.parseInt(values.get(i)));
-                    case 3:
-                        this.setWeapon(values.get(i));
-                    default:
-                        break;
-                }
+    public List<String> write() {
+        List<String> list;
+        // TODO WIP
+        for (int i=0; i<values.size(); i++) {
+            switch (i) {
+                case 0:
+                    this.setName(values.get(i));
+                case 1:
+                    this.setHitPoints(Integer.parseInt(values.get(i)));
+                case 2:
+                    this.setStrength(Integer.parseInt(values.get(i)));
+                case 3:
+                    this.setWeapon(values.get(i));
+                default:
+                    break;
             }
         }
     }

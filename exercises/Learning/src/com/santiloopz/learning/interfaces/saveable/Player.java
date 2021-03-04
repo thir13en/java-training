@@ -3,11 +3,11 @@ package com.santiloopz.learning.interfaces.saveable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Player {
-    String name;
-    String weapon;
-    int hitPoints;
-    int strength;
+public class Player implements ISaveable {
+    private String name;
+    private String weapon;
+    private int hitPoints;
+    private int strength;
 
     public Player(String name, int hitPoints, int strength) {
         this.name = name;
@@ -48,7 +48,7 @@ public class Player {
         this.strength = strength;
     }
 
-    public List<String> read() {
+    public List<String> write() {
         List<String> values = new ArrayList<String>();
         values.add(this.name);
         values.add(String.valueOf(this.hitPoints));
@@ -58,7 +58,7 @@ public class Player {
         return values;
     }
 
-    public void write(List<String> values) {
+    public void read(List<String> values) {
         if (values != null && values.size() > 0) {
             for (int i=0; i<values.size(); i++) {
                 switch (i) {

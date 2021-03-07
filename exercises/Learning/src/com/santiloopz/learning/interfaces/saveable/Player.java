@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Player implements ISaveable {
-    String name;
-    String weapon;
-    int hitPoints;
-    int strength;
+    private String name;
+    private String weapon;
+    private int hitPoints;
+    private int strength;
 
     public Player(String name, int hitPoints, int strength) {
         this.name = name;
@@ -50,30 +50,21 @@ public class Player implements ISaveable {
 
     public void read(List<String> list) {
         if (list != null && list.size() > 0) {
-            list.add(this.name);
-            list.add(String.valueOf(this.hitPoints));
-            list.add(String.valueOf(this.strength));
-            list.add(this.weapon);
+            list.add(0, this.name);
+            list.add(1, String.valueOf(this.hitPoints));
+            list.add(2, String.valueOf(this.strength));
+            list.add(3, this.weapon);
         }
     }
 
     public List<String> write() {
-        List<String> list;
-        // TODO WIP
-        for (int i=0; i<values.size(); i++) {
-            switch (i) {
-                case 0:
-                    this.setName(values.get(i));
-                case 1:
-                    this.setHitPoints(Integer.parseInt(values.get(i)));
-                case 2:
-                    this.setStrength(Integer.parseInt(values.get(i)));
-                case 3:
-                    this.setWeapon(values.get(i));
-                default:
-                    break;
-            }
-        }
+        List<String> list = new ArrayList<String>();
+        list.add(this.name);
+        list.add(String.valueOf(this.hitPoints));
+        list.add(String.valueOf(this.strength));
+        list.add(this.weapon);
+
+        return list;
     }
 
     @Override

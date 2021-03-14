@@ -26,19 +26,21 @@ public class Monster implements ISaveable {
         return strength;
     }
 
+    @Override
     public void read(List<String> values) {
         if (values != null && values.size() > 0) {
-            values.add(0, this.name);
-            values.add(1, String.valueOf(this.hitPoints));
-            values.add(2, String.valueOf(this.strength));
+            this.name = values.get(0);
+            this.hitPoints = Integer.parseInt(values.get(1));
+            this.strength = Integer.parseInt(values.get(2));
         }
     }
 
+    @Override
     public List<String> write() {
         List<String> values = new ArrayList<String>();
-        values.add(this.name);
-        values.add(String.valueOf(this.hitPoints));
-        values.add(String.valueOf(this.strength));
+        values.add(0, this.name);
+        values.add(1, String.valueOf(this.hitPoints));
+        values.add(2, String.valueOf(this.strength));
 
         return values;
     }

@@ -48,21 +48,23 @@ public class Player implements ISaveable {
         this.strength = strength;
     }
 
+    @Override
     public void read(List<String> list) {
         if (list != null && list.size() > 0) {
-            list.add(0, this.name);
-            list.add(1, String.valueOf(this.hitPoints));
-            list.add(2, String.valueOf(this.strength));
-            list.add(3, this.weapon);
+            this.name = list.get(0);
+            this.hitPoints = Integer.parseInt(list.get(1));
+            this.strength = Integer.parseInt(list.get(2));
+            this.weapon = list.get(3);
         }
     }
 
+    @Override
     public List<String> write() {
         List<String> list = new ArrayList<String>();
-        list.add(this.name);
-        list.add(String.valueOf(this.hitPoints));
-        list.add(String.valueOf(this.strength));
-        list.add(this.weapon);
+        list.add(0, this.name);
+        list.add(1, String.valueOf(this.hitPoints));
+        list.add(2, String.valueOf(this.strength));
+        list.add(3, this.weapon);
 
         return list;
     }

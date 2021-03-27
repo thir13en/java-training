@@ -52,3 +52,11 @@ Every Class implements a `toString` method that by default provides the fully qu
 ```
 com.santiloopz.MyClass@dfasdcx 
 ```
+
+### Casting in Java
+You can specify a certain instance belongs to a class with `Casting`, like this:
+```java
+IInterface monster = new Monster();
+// The compiler knows about the interface but not the class, but we can explicit it!!
+(Monster myMonster).getStrength();
+```

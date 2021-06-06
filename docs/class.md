@@ -60,3 +60,10 @@ IInterface monster = new Monster();
 // The compiler knows about the interface but not the class, but we can explicit it!!
 (Monster myMonster).getStrength();
 ```
+
+### Nested and inner Classes
+* Non-static nested Class / Inner Class
+  
+* Static nested classes
+* Local Class
+* Anonymous Class

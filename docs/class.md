@@ -5,14 +5,17 @@
 When invoked inside the class, the `this` keyword is `NOT` necessary.
 
 ### Method overloading
-Consists on using the same method name but with different paramenters. It does **NOT** work just by reusing the same signature and parameters and changing the return type, it needs to change the number or type of parameters.  
+Consists on using the same method name but with different parameters. It does **NOT** work just by reusing the same 
+signature and parameters and changing the return type, it needs to change the number or type of parameters.  
 It is often related with **polymorphism**, but it has nothing to do with it. It is often referred as **Compile Time Polymorphism**.  
-You can overload `static` and `instance` methods. 
+You can overload `static` and `instance` methods.
 
 ### Method overriding
-It is actual **Runtime Polymorphism** and **Dynamic Method Dispatch**, it consist en defining a method signature that already exists in the parent class, and overriding it's implementation with the `@Override` decorator.  
-Overriden method **can't** have a less restrictive modifier, for example `protected` => `public` will fail, while `protected` => `private` won't. You can use `super.<methodName>()` to still call the non-overriden method.  
-As a last note, the overriden method **can't** throw a new or broader checked exception. 
+It is actual **Runtime Polymorphism** and **Dynamic Method Dispatch**, it consists on defining a method signature that 
+already exists in the parent class, and overriding it's implementation with the `@Override` decorator.  
+Overridden method **can't** have a less restrictive modifier, for example `protected` => `public` will fail, while 
+`protected` => `private` won't. You can use `super.<methodName>()` to still call the non-overridden method.  
+As a last note, the overridden method **can't** throw a new or broader checked exception.
 
 ### Constructor syntax
 ```java
@@ -35,20 +38,29 @@ public class Kebab {
 ```
 
 ### Initializing properties
-As a rule of thumb, set properties directly in the constructor by assignation, not by calling the setter, which is reserved for used outside the constructor.
+As a rule of thumb, set properties directly in the constructor by an assignation, not by calling the setter, which is 
+reserved for used outside the constructor.
 
 ### Super vs This
-`super` is used to access the superclass methods, while `this` accesses the current instance. It is used for usually with method overriding, for specifying that we want to explicitly call the superclass method. By default, constructors add a call to `super()` superclass constructor with no arguments (empty constructor). An `abstract class` is still a superclass and it's constructor is called whenever instantiated.
+`super` is used to access the superclass methods, while `this` accesses the current instance. It is used for usually 
+with method overriding, for specifying that we want to explicitly call the superclass method. By default, constructors 
+add a call to `super()` superclass constructor with no arguments (empty constructor). An `abstract class` is still a 
+superclass, and it's constructor is called whenever instantiated.
 * call to parent constructor: `super(...args)`
-* call to current instrance constructor: `this(...args)`
+* call to current instance constructor: `this(...args)`
 
 ### Static vs Instance methods and properties
-`Static` modifier tells us that a method or property is not an instance one, but can be accesses directly though the class declaration, i.e. `ClassName.staticMethod()`. On the opposite, to use an `Instance` method or property, we first need to craete or instance a class with the `new` keyword.  
-If you change a `static` field in one class, the change will propagate to the others, because that field belongs to the object that holds the class. So actually you do not change all other instances, but the value of the memory position that holds the pointer of the static method will be changed.
+`Static` modifier tells us that a method or property is not an instance one, but can be accesses directly though the 
+class declaration, i.e. `ClassName.staticMethod()`. On the opposite, to use an `Instance` method or property, we first 
+need to create or instance a class with the `new` keyword.  
+If you change a `static` field in one class, the change will propagate to the others, because that field belongs to the 
+object that holds the class. So actually you do not change all other instances, but the value of the memory position 
+that holds the pointer of the static method will be changed.
 `Instance fields`, on the contrary, represent the specific **state** of an instantiated element. 
 
 ### toString
-Every Class implements a `toString` method that by default provides the fully qualified name of the class (package + className) @ the position of memory at runtime:
+Every Class implements a `toString` method that by default provides the fully qualified name of the class 
+(package + className) @ the position of memory at runtime:
 ```
 com.santiloopz.MyClass@dfasdcx 
 ```

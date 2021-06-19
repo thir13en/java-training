@@ -79,3 +79,8 @@ IInterface monster = new Monster();
 * Static nested classes
 * Local Class
 * Anonymous Class
+
+#### Local Class
+You can nest one class inside another, this is what we call a `Local Class`, it will be interesting to do this when we
+need to create a Class that will only be referred within the context of another.  
+The `this` keyword within the inner class will refer to the class itself and not the container class.

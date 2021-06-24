@@ -83,4 +83,14 @@ IInterface monster = new Monster();
 #### Local Class
 You can nest one class inside another, this is what we call a `Local Class`, it will be interesting to do this when we
 need to create a Class that will only be referred within the context of another.  
-The `this` keyword within the inner class will refer to the class itself and not the container class.
+The `this` keyword within the inner class will refer to the class itself and not the container class.  
+To instantiate Local Classes, you follow this syntax:
+```java
+// Instantiate container class
+Gearbox mcLaren = new Gearbox(6);
+
+// Instantiate local class
+Gearbox.Gear gear = Gearbox.new Gear(1, 1.2);
+```
+It is important to consider that you will need to have an instance of the parent class to be able to access the
+local class constructor.

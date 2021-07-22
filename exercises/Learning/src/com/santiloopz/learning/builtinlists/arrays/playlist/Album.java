@@ -6,50 +6,36 @@ import java.util.LinkedList;
 public class Album {
     private String name;
     private String artist;
-    private ArrayList<Song> songs;
+    private SongList songList;
 
     public Album(String name, String artist) {
         this.name = name;
         this.artist = artist;
-        this.songs = new ArrayList<Song>();
+        this.songList = new SongList();
     }
 
     public boolean addSong(String title, double duration) {
-        Song foundSong = findSong(title);
-        if (foundSong != null) {
-            return false;
-        }
-        songs.add(new Song(title, duration));
-        return true;
+        Song newSong = new Song(title, duration);
+        return this.songList.add(newSong);
     }
 
     private Song findSong(String title) {
-        for (Song song : songs) {
-            if (song.getTitle().equals(title)) {
-                return song;
-            }
-        }
-        return null;
+        return songList.findSong(title);
     }
 
     public boolean addToPlayList(int trackNumber, LinkedList<Song> playlist) {
-        if (trackNumber < 1 || songs.size() > trackNumber) {
+        Song foundSong = songList.findSong(trackNumber);
+
+        if (foundSong == null) {
             return false;
         }
 
-        playlist.add(songs.get(trackNumber - 1));
+        playlist.add(foundSong);
         return true;
     }
 
     public boolean addToPlayList(String songTitle, LinkedList<Song> playlist) {
-        Song songToAdd = null;
-
-        for (Song song : songs) {
-            if (song.getTitle().equals(songTitle)) {
-                songToAdd = song;
-                break;
-            }
-        }
+        Song songToAdd = this.songList.findSong(songTitle);
 
         if (songToAdd == null) {
             return false;
@@ -57,5 +43,43 @@ public class Album {
 
         playlist.add(songToAdd);
         return true;
+    }
+
+    class SongList {
+        private ArrayList<Song> songs;
+
+        public SongList () {
+            this.songs = new ArrayList<Song>();
+        }
+
+        public boolean add(Song song) {
+            Song foundSong = findSong(song.getTitle());
+            if (foundSong != null) {
+                return false;
+            }
+            songs.add(song);
+            return true;
+        }
+
+        Song findSong(String title) {
+            Song songToAdd = null;
+
+            for (Song song : songs) {
+                if (song.getTitle().equals(title)) {
+                    songToAdd = song;
+                    break;
+                }
+            }
+
+            return songToAdd;
+        }
+
+        Song findSong(int trackNumber) {
+            if (trackNumber >= 0 && trackNumber < songs.size()) {
+                return songs.get(trackNumber);
+            }
+
+            return null;
+        }
     }
 }

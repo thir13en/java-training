@@ -6,25 +6,21 @@ import java.util.LinkedList;
 public class Album {
     private String name;
     private String artist;
-    private SongList songList;
+    private SongList songs;
 
     public Album(String name, String artist) {
         this.name = name;
         this.artist = artist;
-        this.songList = new SongList();
+        this.songs = new SongList();
     }
 
     public boolean addSong(String title, double duration) {
         Song newSong = new Song(title, duration);
-        return this.songList.add(newSong);
-    }
-
-    private Song findSong(String title) {
-        return songList.findSong(title);
+        return songs.add(newSong);
     }
 
     public boolean addToPlayList(int trackNumber, LinkedList<Song> playlist) {
-        Song foundSong = songList.findSong(trackNumber);
+        Song foundSong = songs.findSong(trackNumber);
 
         if (foundSong == null) {
             return false;
@@ -35,7 +31,7 @@ public class Album {
     }
 
     public boolean addToPlayList(String songTitle, LinkedList<Song> playlist) {
-        Song songToAdd = this.songList.findSong(songTitle);
+        Song songToAdd = songs.findSong(songTitle);
 
         if (songToAdd == null) {
             return false;
@@ -45,14 +41,14 @@ public class Album {
         return true;
     }
 
-    class SongList {
+    static class SongList {
         private ArrayList<Song> songs;
 
-        public SongList () {
-            this.songs = new ArrayList<Song>();
+        private SongList () {
+            songs = new ArrayList<Song>();
         }
 
-        public boolean add(Song song) {
+        private boolean add(Song song) {
             Song foundSong = findSong(song.getTitle());
             if (foundSong != null) {
                 return false;
@@ -61,7 +57,7 @@ public class Album {
             return true;
         }
 
-        Song findSong(String title) {
+        private Song findSong(String title) {
             Song songToAdd = null;
 
             for (Song song : songs) {
@@ -74,9 +70,9 @@ public class Album {
             return songToAdd;
         }
 
-        Song findSong(int trackNumber) {
-            if (trackNumber >= 0 && trackNumber < songs.size()) {
-                return songs.get(trackNumber);
+        private Song findSong(int trackNumber) {
+            if (trackNumber > 0 && trackNumber <= songs.size()) {
+                return songs.get(trackNumber - 1);
             }
 
             return null;

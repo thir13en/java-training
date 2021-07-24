@@ -93,4 +93,7 @@ Gearbox mcLaren = new Gearbox(6);
 Gearbox.Gear gear = Gearbox.new Gear(1, 1.2);
 ```
 It is important to consider that you will need to have an instance of the parent class to be able to access the
-local class constructor.
+local class constructor.  
+Important consideration, if you only want to use your Local Class within another class, which shall be the case,
+you should declare the Local Class as `static class ClassName` and all it's members and methods, including constructor,
+as private. It is counter-intuitive but private members of the local class will be accessible by parent class.

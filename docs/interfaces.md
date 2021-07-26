@@ -43,3 +43,10 @@ And now, to create instances, you create based on the Interface type:
 private ITelephone myPhone = new DeskTelephone();
 // ...
 ```
+
+### Defining interfaces
+An interface is an abstract contract that a class will implement in some part of our source. When we define interfaces we can
+be more or less restrictive in our definitions, for example we can force some property to be `ArrayList<String>`, or we
+could just completely skip the `ArrayList` and only force to use a `List<String`, which will allow the user to user
+other types of List, we can even go as far as to determine that the property is of type `List`, so we provide more degrees
+of freedom in determining what kind of content will our list have.

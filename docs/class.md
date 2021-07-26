@@ -97,3 +97,7 @@ local class constructor.
 Important consideration, if you only want to use your Local Class within another class, which shall be the case,
 you should declare the Local Class as `static class ClassName` and all it's members and methods, including constructor,
 as private. It is counter-intuitive but private members of the local class will be accessible by parent class.
+
+### Abstract Classes
+These are classes that provide a specific implementation, but it cannot be instantiated, it is only thought to be `extended`
+by other classes that will inherit all it's implementations.

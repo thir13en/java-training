@@ -44,7 +44,7 @@ public class Album {
     static class SongList {
         private ArrayList<Song> songs;
 
-        private SongList () {
+        private SongList() {
             songs = new ArrayList<Song>();
         }
 

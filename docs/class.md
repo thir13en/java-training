@@ -101,3 +101,5 @@ as private. It is counter-intuitive but private members of the local class will 
 ### Abstract Classes
 These are classes that provide a specific implementation, but it cannot be instantiated, it is only thought to be `extended`
 by other classes that will inherit all it's implementations.
+
+To re-implement the methods that the Abstract Class contains in their children, you will need to `@Override` the methods in the Child Class.

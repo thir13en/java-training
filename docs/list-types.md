@@ -1,6 +1,6 @@
-# List Types
+# Collection Types
 
-List is a `java` interface that is implemented by many casses.
+List is a `java` interface that is implemented by many native Java classes.
 
 ### The List Interface
 All List listed in this section extend from the List interface.

@@ -52,5 +52,7 @@ if (hasNextInt) {
 } else {
 	System.out.println("Unable to parse year of birth");
 }
+
+scanner.close();
 ```
 **Remember to close the scanner!!!**
